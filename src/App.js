@@ -7,7 +7,8 @@ export default function App() {
   const [catMotionState, setCatMotionState] = useState({
     transform:{
       translateX:0
-    }
+    },
+    rotate:0
   });
   
   return (

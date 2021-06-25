@@ -1,28 +1,18 @@
 import React, { useState } from "react";
 import Icon from "./Icon";
 
-// import { move } from "../utils/motion/move";
+import { move,rotate } from "../utils/motion";
 
 export default function Sidebar({catMotionState,setCatMotionState}) {
   
 
   function handleMove(e) {
-
     e.preventDefault();
-    const newX=catMotionState.transform.translateX+100;
-    // setCatMotionState(prevState => ({
-    //   transform: prevState.transform.translateX=newX,     
-    //   ...prevState
-    // }));
-    setCatMotionState(prevState => ({
-      ...prevState,
-      transform: {
-        ...prevState.transform,
-        translateX: newX
-      }
-    }));
-    console.log(setCatMotionState);
-    // move( setCatMotionState, 100);
+    move (catMotionState,setCatMotionState,50);
+  }
+  function handleRotate(e){
+    e.preventDefault();
+    rotate(catMotionState,setCatMotionState,15);
   }
   function handleClick(e) {
     // e.preventDefault();
@@ -51,14 +41,16 @@ export default function Sidebar({catMotionState,setCatMotionState}) {
       >
         {"Move 10 steps"}
       </div>
-      <div className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer">
+      <div 
+      onClick={handleRotate} 
+      className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer">
         {"Turn "}
-        <Icon name="undo" size={15} className="text-white mx-2" />
+        <Icon name="redo" size={15} className="text-white mx-2" />
         {"15 degrees"}
       </div>
       <div className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer">
         {"Turn "}
-        <Icon name="redo" size={15} className="text-white mx-2" />
+        <Icon name="undo" size={15} className="text-white mx-2" />
         {"15 degrees"}
       </div>
     </div>

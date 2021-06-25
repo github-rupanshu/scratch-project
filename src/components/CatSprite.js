@@ -2,13 +2,21 @@ import React from "react";
 
 export default function CatSprite({catMotionState}) {
   const styles = { 
-    transform: `translateX(${catMotionState.transform.translateX}px)` 
+
+    // transformOrigin:`${catMotionState.transform.translateX}% ${catMotionState.transform.translateX}%`,
+    transform: ` translate(${catMotionState.transform.translateX}px)
+    rotate(${catMotionState.rotate}deg)
+   `,
+    
 };
+const svgStyle={
+  display:'inline-flex'
+}
 console.log(styles);
   return (
     <svg
     id="cat"
-    style={styles}
+      style={styles}
       xmlns="http://www.w3.org/2000/svg"
       width="95.17898101806641"
       height="100.04156036376953"
@@ -186,5 +194,6 @@ console.log(styles);
         </g>
       </g>
     </svg>
+    
   );
 }
