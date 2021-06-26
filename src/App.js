@@ -6,7 +6,8 @@ import PreviewArea from "./components/PreviewArea";
 export default function App() {
   const [catMotionState, setCatMotionState] = useState({
     transform:{
-      translateX:0
+      translateX:0,
+      translateY:0
     },
     rotate:0
   });

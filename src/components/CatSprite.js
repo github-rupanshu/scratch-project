@@ -4,7 +4,7 @@ export default function CatSprite({catMotionState}) {
   const styles = { 
 
     // transformOrigin:`${catMotionState.transform.translateX}% ${catMotionState.transform.translateX}%`,
-    transform: ` translate(${catMotionState.transform.translateX}px)
+    transform: ` translate(${catMotionState.transform.translateX}px,${catMotionState.transform.translateY}px)
     rotate(${catMotionState.rotate}deg)
    `,
     

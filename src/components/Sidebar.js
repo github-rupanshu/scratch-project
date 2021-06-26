@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import Icon from "./Icon";
 
-import { move,rotate } from "../utils/motion";
+import { moveX,moveY,rotate } from "../utils/motion";
 
 export default function Sidebar({catMotionState,setCatMotionState}) {
   
 
-  function handleMove(e) {
+  function handleMoveX(e) {
     e.preventDefault();
-    move (catMotionState,setCatMotionState,50);
+    moveX (catMotionState,setCatMotionState,50);
+  }
+  function handleMoveY(e) {
+    e.preventDefault();
+    moveY (catMotionState,setCatMotionState,50);
   }
   function handleRotate(e){
     e.preventDefault();
@@ -37,9 +41,15 @@ export default function Sidebar({catMotionState,setCatMotionState}) {
       <div className="font-bold"> {"Motion"} </div>
       <div
         className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
-        onClick={handleMove}
+        onClick={handleMoveX}
       >
-        {"Move 10 steps"}
+        {"Move 10 steps x direction"}
+      </div>
+      <div
+        className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
+        onClick={handleMoveY}
+      >
+        {"Move 10 steps y direction"}
       </div>
       <div 
       onClick={handleRotate} 

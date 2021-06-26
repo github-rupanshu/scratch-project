@@ -1,4 +1,4 @@
-const move =(catMotionState,setCatMotionState,x)=>{
+const moveX =(catMotionState,setCatMotionState,x)=>{
 
     console.log("moving");
     const newX=catMotionState.transform.translateX+x;
@@ -9,6 +9,18 @@ const move =(catMotionState,setCatMotionState,x)=>{
         translateX: newX
       }
     }));
+}
+const moveY =(catMotionState,setCatMotionState,y)=>{
+
+  console.log("moving");
+  const newY=catMotionState.transform.translateX+y;
+  setCatMotionState(prevState => ({
+    ...prevState,
+    transform: {
+      ...prevState.transform,
+      translateY: newY
+    }
+  }));
 }
 const rotate =(catMotionState,setCatMotionState,x)=>{
 
@@ -21,6 +33,7 @@ const rotate =(catMotionState,setCatMotionState,x)=>{
 }
 
 export {
-    move,
+    moveX,
+    moveY,
     rotate
 };
