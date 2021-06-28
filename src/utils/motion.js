@@ -13,7 +13,7 @@ const moveX =(catMotionState,setCatMotionState,x)=>{
 const moveY =(catMotionState,setCatMotionState,y)=>{
 
   console.log("moving");
-  const newY=catMotionState.transform.translateX+y;
+  const newY=catMotionState.transform.translateY+y;
   setCatMotionState(prevState => ({
     ...prevState,
     transform: {

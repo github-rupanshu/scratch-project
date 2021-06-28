@@ -18,6 +18,18 @@ export default function Sidebar({catMotionState,setCatMotionState}) {
     e.preventDefault();
     rotate(catMotionState,setCatMotionState,15);
   }
+  function handleRotateACW(e){
+    e.preventDefault();
+    rotate(catMotionState,setCatMotionState,-15);
+  }
+  function sayHello(){
+    const textBox=document.getElementById("cat-text");
+    const catLocation=document.getElementById("cat");
+    console.log(catLocation.offsetTop);
+    textBox.style.transform = `translate(${catLocation.offsetLeft}px)`;
+
+    textBox.innerText="Hello !!"
+  }
   function handleClick(e) {
     // e.preventDefault();
 
@@ -43,13 +55,13 @@ export default function Sidebar({catMotionState,setCatMotionState}) {
         className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
         onClick={handleMoveX}
       >
-        {"Move 10 steps x direction"}
+        {"Move 10 steps Right"}
       </div>
       <div
         className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
         onClick={handleMoveY}
       >
-        {"Move 10 steps y direction"}
+        {"Move 10 steps Down "}
       </div>
       <div 
       onClick={handleRotate} 
@@ -58,11 +70,21 @@ export default function Sidebar({catMotionState,setCatMotionState}) {
         <Icon name="redo" size={15} className="text-white mx-2" />
         {"15 degrees"}
       </div>
-      <div className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer">
+      <div 
+      onClick={handleRotateACW} 
+      className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer">
         {"Turn "}
         <Icon name="undo" size={15} className="text-white mx-2" />
         {"15 degrees"}
       </div>
+      <div className="font-bold"> {"Looks"} </div>
+      <div
+        className="flex flex-row flex-wrap bg-blue-500 text-white px-2 py-1 my-2 text-sm cursor-pointer"
+        onClick={sayHello}
+      >
+        {"Say Hello"}
+      </div>
+
     </div>
   );
 }
