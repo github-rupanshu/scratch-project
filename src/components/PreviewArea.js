@@ -7,7 +7,7 @@ export default function PreviewArea({catMotionState}) {
      
       <CatSprite catMotionState={catMotionState}/>
       <div id="cat-text" className=" relative "
-      >lllllllllllll</div>
+      ></div>
     </div>
   );
 }
